@@ -35,7 +35,7 @@ const MovieSearch = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/favorites', {
+      const res = await fetch('https://fullstack-3-jwvw.onrender.com/api/favorites', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

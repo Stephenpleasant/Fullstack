@@ -43,7 +43,7 @@ const Auth = () => {
     setIsLoading(true);
 
     // Debug: Log the API URL being used
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://fullstack-3-jwvw.onrender.com';
     console.log('API Base URL:', baseUrl);
 
     const endpoint = isRegister ? '/api/auth/register' : '/api/auth/login';
