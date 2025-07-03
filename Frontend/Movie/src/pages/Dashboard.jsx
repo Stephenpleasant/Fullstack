@@ -17,17 +17,17 @@ const Dashboard = () => {
   // Initial fetch on component mount
   useEffect(() => {
     if (token) {
-      fetchMovies("Preach", 1); // Default search
+      fetchMovies("popular", 1); // Default search
     }
   }, [token]);
 
-  const fetchMovies = async (searchTerm = "Preach", pageNum = 1) => {
+  const fetchMovies = async (searchTerm = "popular", pageNum = 1) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${
-          import.meta.env.VITE_TMDB_API_KEY
-        }&query=${searchTerm}&page=${pageNum}`
+         `https://api.themoviedb.org/3/movie/popular?api_key=${
+        import.meta.env.VITE_TMDB_API_KEY
+      }&page=${pageNum}`
       );
       setMovies(response.data.results);
       setTotalPages(response.data.total_pages);
@@ -38,11 +38,14 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
       fetchMovies(query, 1);
+    } else {
+      fetchPopularMovies(newPage);
     }
   };
 
