@@ -5,8 +5,8 @@ import authenticateUser from "../middleware/authMiddleware.js"; // 🔐 Import m
 
 const router = express.Router();
 
-router.post("/auth/register", registerUser);
-router.post("/auth/login", loginUser);
+router.post("/api/auth/register", registerUser);
+router.post("/api/auth/login", loginUser);
 
 // 🔐 Protected route example
 router.get("/profile", authenticateUser, (req, res) => {
