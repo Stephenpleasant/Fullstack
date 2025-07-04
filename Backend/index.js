@@ -20,7 +20,7 @@ app.use(express.json());
 
 // ✅ Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/movie', movieRoutes);
+app.use('/api/movies', movieRoutes);
 
 // ✅ Health check route
 app.get('/', (req, res) => {

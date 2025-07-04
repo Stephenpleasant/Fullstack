@@ -15,7 +15,7 @@ const Dashboard = () => {
   const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
 
   // Initial fetch on component mount
-  useEffect(() => {
+    useEffect(() => {
     if (token) {
       fetchMovies("Avengers", 1); // Default search
     }
