@@ -17,11 +17,11 @@ const Dashboard = () => {
   // Initial fetch on component mount
     useEffect(() => {
     if (token) {
-      fetchMovies("Preacher", 1); // Default search
+      fetchMovies("Avengers", 1); // Default search
     }
   }, [token]);
 
-  const fetchMovies = async (searchTerm = "Preacher", pageNum = 1) => {
+  const fetchMovies = async (searchTerm = "Avengers", pageNum = 1) => {
     setLoading(true);
     try {
       const response = await axios.get(
@@ -54,7 +54,7 @@ const Dashboard = () => {
 
   const goToPage = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
-      fetchMovies(query || "Preacher", newPage);
+      fetchMovies(query || "Avengers", newPage);
     }
   };
 
